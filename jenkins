@@ -8,6 +8,10 @@ node{
         
         sh 'mvn install'
     }
-
+    
+    stage('jfrog'){
+    
+    archiveArtifacts artifacts: 'http://43.205.209.185:8082/artifactory', excludes: '*/*.war=>${BUILD_NUMBER}', followSymlinks: false, onlyIfSuccessful: true
+    }
    
 }
