@@ -1,0 +1,13 @@
+node{
+    
+    stage('myGit') {
+    git credentialsId: '4e8ae47d-a452-416f-9d1b-567cae13858c', url: 'https://github.com/npnallasamy/mahalogin1'
+}
+
+    stage('myMaven'){
+        
+        sh 'mvn install'
+    }
+
+   
+}
